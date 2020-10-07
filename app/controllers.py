@@ -34,7 +34,6 @@ def get_all_sandwiches():
     """
     response = []
     for sandwich in SandwichManager.get_all_sandwiches():
-        print(sandwich)
         response.append(sandwich.to_dict())
 
     # Flask will autoformat this into JSON response if you return a python dict
@@ -47,7 +46,6 @@ def create_sandwich():
     DEMO CODE
     """
     body = request.json
-    print(body)
     sandwich = SandwichManager.create_sandwich(body)
 
     # Flask will autoformat this into JSON response if you return a python dict
