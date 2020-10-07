@@ -17,13 +17,8 @@ Remember to always use Google and StackOverflow as a resource if you are not sur
 
 
 ## Objective
+### Task
 Your goal is to build the routing and controllers for the messages API.
-
-We have provided you with starter and demo code. You do NOT need to change anything in the `app/models.py` file. All of your work should go into `app/controllers.py` file. You can use the sandwiches API code as a working reference (you do not need to change this code).
-
-We have also provided two scripts inside the `scripts/ ` directory that you can run in the command line (see below). These scripts use python to simplify sending HTTP requests to your local server.
-
-The sandwiches script should work immediately (since the sandwich API is already built out).
 
 Lab is complete when you are able to successfully run the `check_if_lab_complete` function in the `scripts/call_messages_api.py` file.
 
@@ -34,6 +29,13 @@ If you look closely into that file, it will test for these APIs to work:
 * get a message by id (`GET /messages/<message_id>`)
 * filter messages by chat id (`GET /chat/<chat_id>`)
 * get last number of messages (`GET /last/?count=<number of message>`)
+
+### Context
+We have provided you with starter and demo code. You do NOT need to change anything in the `app/models.py` file. All of your work should go into `app/controllers.py` file. You can use the sandwiches API code as a working reference (you do not need to change this code).
+
+We have also provided two scripts inside the `scripts/ ` directory that you can run in the command line (see below). These scripts use python to simplify sending HTTP requests to your local server.
+
+The sandwiches script should work immediately (since the sandwich API is already built out).
 
 
 ## Set Up
