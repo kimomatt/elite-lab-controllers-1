@@ -43,25 +43,25 @@ The sandwiches script should work immediately (since the sandwich API is already
 
 * Activate your virtual environment
 ```
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ```
 
 * Install the dependencies to your virtual environment
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 * Start up your SQLite database with:
 ```
-FLASK_APP=lab-app.py flask db init
-FLASK_APP=lab-app.py flask db migrate -m "my first migration"
-FLASK_APP=lab-app.py flask db upgrade
+FLASK_APP=lab-app.py python3 -m flask db init
+FLASK_APP=lab-app.py python3 -m flask db migrate -m "my first migration"
+FLASK_APP=lab-app.py python3 -m flask db upgrade
 ```
 
 * Spin up the local web server with:
 ```
-FLASK_APP=lab-app.py FLASK_ENV=development flask run
+FLASK_APP=lab-app.py FLASK_ENV=development python3 -m flask run
 ```
 
 * Open up a new terminal window
@@ -70,19 +70,19 @@ FLASK_APP=lab-app.py FLASK_ENV=development flask run
 
 * Run the sandwich test script with:
 ```
-python scripts/call_sandwiches_api.py
+python3 scripts/call_sandwiches_api.py
 ```
 
 
 ## Lab Steps
 * First try to run the messages test script:
 ```
-python scripts/call_message_api.py
+python3 scripts/call_message_api.py
 ```
 
 * Notice how it fails with an Assertion Error
 
-* Complete the lab by building out each API. You should be working on passing each assertion statement step-by-step (this is called test driven development). I would recommend this order:
+* Complete the lab by building out each API. You should be working on passing each assertion statement step-by-step (this is called test driven development). I would suggest completing the first 4 first. Then work on the second 2 individually.
   * delete a message (`DELETE /messages/<message_id>`)
   * create message (`POST /messages/`)
   * get all messages (`GET /messages/`)
@@ -101,7 +101,7 @@ python scripts/call_message_api.py
   * Use the `#` character to comment out certain lines to prevent them from running
 * You should not need to modify the schema, but if your database goes out of sync with your schema, you can run these commands:
 ```
-FLASK_APP=lab-app.py flask db stamp head
-FLASK_APP=lab-app.py flask db migrate
-FLASK_APP=lab-app.py flask db upgrade
+FLASK_APP=lab-app.py python3 -m flask db stamp head
+FLASK_APP=lab-app.py python3 -m flask db migrate
+FLASK_APP=lab-app.py python3 -m flask db upgrade
 ```
