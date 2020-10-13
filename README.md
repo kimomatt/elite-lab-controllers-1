@@ -77,7 +77,7 @@ python3 scripts/call_sandwiches_api.py
 ## Lab Steps
 * First try to run the messages test script:
 ```
-python3 scripts/call_message_api.py
+python3 scripts/call_messages_api.py
 ```
 
 * Notice how it fails with an Assertion Error
