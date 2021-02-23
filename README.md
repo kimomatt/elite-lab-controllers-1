@@ -82,7 +82,7 @@ python3 scripts/call_messages_api.py
 
 * Notice how it fails and try to make sense of the error message
 
-* Complete the lab by building out each API. You should be working on passing each assertion statement step-by-step (this is called test driven development). I would suggest completing the first 4 first. Then work on the second 2 individually.
+* Complete the lab by building out each API. You should be working on passing each assertion statement step-by-step (this is called test driven development).
   * delete a message (`DELETE /messages/<message_id>`)
   * create message (`POST /messages/`)
   * get all messages (`GET /messages/`)
