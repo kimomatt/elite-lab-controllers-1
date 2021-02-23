@@ -67,3 +67,16 @@ def delete_sandwich(sandwich_id):
 ######################
 #   Your Code Below  #
 ######################
+
+"""
+As a reminder, the MessageManager class is available to you.
+(Think of it like helper code to call the database).
+
+MessageManager has these functions you can use:
+- MessageManager.get_all_messages
+- MessageManager.get_message_by_id
+- MessageManager.create_message
+- MessageManager.delete_message
+- MessageManager.filter_messages_by_chat_id
+- MessageManager.get_last_messages
+"""

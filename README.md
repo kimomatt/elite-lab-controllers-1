@@ -54,14 +54,14 @@ pip3 install -r requirements.txt
 
 * Start up your SQLite database with:
 ```
-FLASK_APP=lab-app.py python3 -m flask db init
-FLASK_APP=lab-app.py python3 -m flask db migrate -m "my first migration"
-FLASK_APP=lab-app.py python3 -m flask db upgrade
+python3 -m flask db init
+python3 -m flask db migrate -m "my first migration"
+python3 -m flask db upgrade
 ```
 
 * Spin up the local web server with:
 ```
-FLASK_APP=lab-app.py FLASK_ENV=development python3 -m flask run
+python3 -m flask run
 ```
 
 * Open up a new terminal window
@@ -80,7 +80,7 @@ python3 scripts/call_sandwiches_api.py
 python3 scripts/call_messages_api.py
 ```
 
-* Notice how it fails with an Assertion Error
+* Notice how it fails and try to make sense of the error message
 
 * Complete the lab by building out each API. You should be working on passing each assertion statement step-by-step (this is called test driven development). I would suggest completing the first 4 first. Then work on the second 2 individually.
   * delete a message (`DELETE /messages/<message_id>`)
