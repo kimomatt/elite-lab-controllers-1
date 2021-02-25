@@ -80,3 +80,43 @@ MessageManager has these functions you can use:
 - MessageManager.filter_messages_by_chat_id
 - MessageManager.get_last_messages
 """
+@app.route('/messages/<int:message_id>', methods=['GET'])
+def get_message(message_id):
+    message = MessageManager.get_message_by_id(message_id)
+    if not message :
+        abort(404)
+    return message.to_dict()
+
+@app.route('/messages/', methods=['GET'])
+def get_all_messages():
+    response = []
+    for message in MessageManager.get_all_messages():
+        response.append(message.to_dict())
+    return {"messages" : response}
+@app.route('/messages/', methods=['POST'])
+def create_message():
+    body = request.json
+    message = MessageManager.create_message(body)
+    return {"id": message.id}
+@app.route('/messages/<int:message_id>', methods=['DELETE'])
+def delete_message(message_id):
+    result = MessageManager.delete_message(message_id)
+    if result:
+        return Response(status=200)
+    else:
+        return abort(500)
+
+@app.route('/chat/<string:chat_id>', methods=['GET'])
+def filter_messages_by_chat_id(chat_id):
+    response = []
+    for message in MessageManager.filter_messages_by_chat_id(chat_id):
+        response.append(message.to_dict())
+    return {"messages" : response}
+
+@app.route('/last/', methods=['GET'])
+def get_last_messages():
+    num_messages = request.args.get('count', default=10)
+    response = []
+    for message in MessageManager.get_last_messages(num_messages):
+        response.append(message.to_dict())
+    return {"messages": response}
